@@ -1,0 +1,22 @@
+{
+  "name": "sikkemha",
+  "version": "1.0.0",
+  "description": "API Endpoints for Publishing and Searching",
+  "main": "server.js",
+  "scripts": {
+    "setup": "npm install",
+    "start": "node --watch --env-file=.env server.js",
+    "postinstall": "prisma generate"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "@prisma/client": "^6.18.0",
+    "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "prisma": "^6.18.0"
+  }
+}
