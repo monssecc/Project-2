@@ -132,15 +132,22 @@ const getData = async () => {
                 div.className = 'profile'
                 div.innerHTML = `<h3>${item.name}</h3>
 
-            <p>${item.program  ?'program: ' + item.program : '<i>No Program Found</i>'}</p>
-            <p>${item.year  ?'year: ' + item.year : '<i>No Year Found</i>'}</p>
-            <p>${item.campus  ?'campus: ' + item.campus : '<i>No Campus Found</i>'}</p>
-            <p>${item.bio  ?'bio: ' + item.bio : '<i>No Bio Found</i>'}</p>
-            <p>${item.motivation  ?'motivation: ' + item.motivation : '<i>No Motivation Found</i>'}</p>
-            <p>${item.skillsYouHave  ?' skills You Have: ' + item.skillsYouHave : '<i>No Skills Found</i>'}</p>
-            <p>${item.skillYouWant  ?'skill You Want: ' + item.skillYouWant : '<i>No Skills Found</i>'}</p>
-            <p>${item.contact  ?'contact: ' + item.contact : '<i>No Contact Found</i>'}</p>
+            <p>${item.program ? 'program: ' + item.program : '<i>No Program Found</i>'}</p>
+            <p>${item.year ? 'year: ' + item.year : '<i>No Year Found</i>'}</p>
+            <p>${item.campus ? 'campus: ' + item.campus : '<i>No Campus Found</i>'}</p>
+            <p>${item.bio ? 'bio: ' + item.bio : '<i>No Bio Found</i>'}</p>
+            <p>${item.motivation ? 'motivation: ' + item.motivation : '<i>No Motivation Found</i>'}</p>
+            <p>${item.skillsYouHave ? ' skills You Have: ' + item.skillsYouHave : '<i>No Skills Found</i>'}</p>
+            <p>${item.skillYouWant ? 'skill You Want: ' + item.skillYouWant : '<i>No Skills Found</i>'}</p>
+            <p>${item.contact ? 'contact: ' + item.contact : '<i>No Contact Found</i>'}</p>
+            <div class="item-actions">
+                <button class="edit-btn">Edit</button>
+                <button class="delete-btn">Delete</button>
+            </div>
             `
+             // Add event listeners to buttons
+            div.querySelector('.edit-btn').addEventListener('click', () => editItem(item))
+            div.querySelector('.delete-btn').addEventListener('click', () => deleteItem(item.id))
                 contentArea.appendChild(div)
             })
         }
@@ -155,3 +162,57 @@ const getData = async () => {
 }
 
 getData()
+
+// Edit item - populate form with existing data
+const editItem = (data) => {
+    console.log('Editing:', data)
+
+    // Populate the form with data to be edited
+    Object.keys(data).forEach(field => {
+        const element = myForm.elements[field]
+        if (element) {
+            if (element.type === 'checkbox') {
+                element.checked = data[field]
+            } else if (element.type === 'date') {
+                // Extract yyyy-mm-dd from ISO date string (avoids timezone issues)
+                element.value = data[field] ? data[field].substring(0, 10) : ''
+            } else {
+                element.value = data[field]
+            }
+        }
+    })
+
+    // Update the heading to indicate edit mode
+    formHeading.textContent = '🐈 Edit Cat'
+
+    // Show the popover
+    formPopover.showPopover()
+}
+
+// Delete item
+const deleteItem = async (id) => {
+    if (!confirm('Are you sure you want to delete this profile?')) {
+        return
+    }
+
+    const endpoint = `/data/${id}`
+    const options = { method: "DELETE" }
+
+    try {
+        const response = await fetch(endpoint, options)
+
+        if (response.ok) {
+            const result = await response.json()
+            console.log('Deleted:', result)
+            // Refresh the data list
+            getData()
+        }
+        else {
+            const errorData = await response.json()
+            alert(errorData.error || 'Failed to delete item')
+        }
+    } catch (error) {
+        console.error('Delete error:', error)
+        alert('An error occurred while deleting')
+    }
+}

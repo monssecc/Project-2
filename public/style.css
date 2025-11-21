@@ -226,3 +226,9 @@ select:user-invalid+.validation,
 textarea:user-invalid+.validation {
     display: block;
 }
+
+.edit-btn {
+    align-self: center;
+    margin-top: 1rem;
+    color: rgb(3, 136, 3);
+}
