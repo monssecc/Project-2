@@ -4,7 +4,7 @@ import express from 'express'
 const router = express.Router()
 
 // Set this to match the model name in your Prisma schema
-const model = 'cats'
+const model = 'profile'
 
 // Prisma lets NodeJS communicate with MongoDB
 // Let's import and initialize the Prisma client
@@ -69,6 +69,21 @@ router.get('/search', async (req, res) => {
         res.status(500).send({ error: 'Search failed', details: err.message || err })
     }
 })
+
+// ----- READ (GET) list ----- 
+router.delete('/data/:id', async (req, res) => {
+    try {
+        const { id } = req.params
+        const deleted = await prisma[model].delete({
+            where: { id: Number(id) }
+        })
+        res.send(deleted)
+    } catch (err) {
+        console.error('DELETE /data/:id error:', err)
+        res.status(500).send({ error: 'Failed to delete record', details: err.message || err })
+    }
+})
+
 
 
 

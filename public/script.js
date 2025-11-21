@@ -7,6 +7,7 @@ let contentArea = document.querySelector('#content')
 myForm.addEventListener('submit', event => {
     // prevent the page from reloading when the form is submitted.
     event.preventDefault();
+    console.log('Form submitted')
     // if the user clicked "reset", reset the form
     if (event.submitter.className == "reset") {
         myForm.reset()
@@ -15,10 +16,10 @@ myForm.addEventListener('submit', event => {
     else {
 
         // if textarea.validity is false, alert the user and stop processing.
-        if (!myForm.description.checkValidity()) {
-            alert('Please provide a description of at least 20 characters.')
-            return
-        }
+        // if (!myForm.description.checkValidity()) {
+        //     alert('Please provide a description of at least 20 characters.')
+        //     return
+        // }
 
         // Represent the FormData entries as a JSON object
         // This gives a baseline representation with all values as strings
@@ -128,9 +129,17 @@ const getData = async () => {
             contentArea.innerHTML = '<h2>🐈 Noteworthy Cats</h2>'
             data.forEach(item => {
                 let div = document.createElement('div')
+                div.className = 'profile'
                 div.innerHTML = `<h3>${item.name}</h3>
-            <p>${item.microchip || '<i>No Microchip Found</i>'}</p>
-            <p>${item.description || '<i>No Description Found</i>'}</p>
+
+            <p>${item.program  ?'program: ' + item.program : '<i>No Program Found</i>'}</p>
+            <p>${item.year  ?'year: ' + item.year : '<i>No Year Found</i>'}</p>
+            <p>${item.campus  ?'campus: ' + item.campus : '<i>No Campus Found</i>'}</p>
+            <p>${item.bio  ?'bio: ' + item.bio : '<i>No Bio Found</i>'}</p>
+            <p>${item.motivation  ?'motivation: ' + item.motivation : '<i>No Motivation Found</i>'}</p>
+            <p>${item.skillsYouHave  ?' skills You Have: ' + item.skillsYouHave : '<i>No Skills Found</i>'}</p>
+            <p>${item.skillYouWant  ?'skill You Want: ' + item.skillYouWant : '<i>No Skills Found</i>'}</p>
+            <p>${item.contact  ?'contact: ' + item.contact : '<i>No Contact Found</i>'}</p>
             `
                 contentArea.appendChild(div)
             })

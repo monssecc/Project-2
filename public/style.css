@@ -102,7 +102,9 @@ button.reset:hover {
 
 
 main,
-#content {
+#content {}
+
+.profile {
     margin: 0 10vw;
     max-width: 60rem;
     margin-bottom: 4rem;

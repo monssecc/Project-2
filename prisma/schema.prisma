@@ -7,6 +7,26 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+model profile {
+  id             String    @id @default(auto()) @map("_id") @db.ObjectId
+  name           String 
+  program        String
+  year           String?
+  campus         String?
+  bio            String?
+  motivation     String?
+  skillsYouHave  String
+  skillYouWant   String
+  contact        String
+  
+}
+model recipes {
+  id             String    @id @default(auto()) @map("_id") @db.ObjectId
+  name           String    
+  country        String?
+  
+}
+
 model cats {
   id             String    @id @default(auto()) @map("_id") @db.ObjectId
   adoptionDate   DateTime? @db.Date
@@ -28,3 +48,4 @@ model cats {
   isAdopted      Boolean?
   food           String?
 }
+
