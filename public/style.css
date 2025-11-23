@@ -1,4 +1,4 @@
-/* Reset & base styles */
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -11,46 +11,55 @@ html {
 
 body {
   font-family: "Jost", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  background-color: #f3f3f5;
+  background-color: #F8F6F0;
   color: #111111;
   line-height: 1.5;
   padding: 24px;
 }
 
-/* Links */
-a {
-  color: #030213;
-  text-decoration: underline;
-}
-
-a:hover {
-  text-decoration: none;
-}
-
-/* Header & intro text */
 header {
   max-width: 900px;
   margin: 0 auto 32px auto;
 }
 
 header h1 {
+  font-size: 10rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #0043DF;
+}
+
+h2 {
   font-size: 2rem;
   font-weight: 600;
   margin-bottom: 8px;
+  margin: 0 auto 32px auto;
+  margin-left: 12vw;
+  margin-top: 4rem;
 }
-
+h3 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  margin: 0 auto 32px auto;
+  margin-top: 4rem;
+  color: #000000;
+    margin: 0 auto 32px auto;
+  margin-left: 12vw;
+  margin-top: 4rem;
+}
 header h4 {
   font-size: 1rem;
   font-weight: 500;
   color: #555555;
   margin-bottom: 16px;
+  
 }
 
 .intro {
-  background-color: #ffffff;
+  background-color: #e8e3e3;
   border-radius: 10px;
   padding: 16px 20px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
   border: 1px solid rgba(0, 0, 0, 0.05);
   font-size: 0.95rem;
 }
@@ -59,17 +68,6 @@ header h4 {
   margin-bottom: 12px;
 }
 
-.intro ul {
-  margin-left: 20px;
-  margin-bottom: 12px;
-}
-
-.intro li {
-  list-style: disc;
-  margin-bottom: 4px;
-}
-
-/* Status section */
 #status {
   max-width: 900px;
   margin: 16px auto 8px auto;
@@ -77,33 +75,31 @@ header h4 {
 }
 
 #readyStatus {
-  color: #0f7b32; /* green */
+  color: #0f7b32; 
   margin-bottom: 4px;
 }
 
 #notReadyStatus {
-  color: #d4183d; /* red */
+  color: #d4183d; 
 }
 
-/* Content section for data list */
+
 .profile {
-  background-color: #ffffff;
+  background-color: #0043DF;
   border-radius: 10px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
-  border: 1px solid rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(25, 0, 255, 0.05);
   font-size: 0.95rem;
   width: 30vw;
 }
 
-/* Main form card */
+
 main {
   max-width: 900px;
   margin: 0 auto 32px auto;
-  background-color: #ffffff;
+  background-color: #4e8cff;
   border-radius: 12px;
   padding: 24px 24px 28px 24px;
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.06);
-  border: 1px solid rgba(0, 0, 0, 0.06);
+  border: 5px solid rgb(2, 20, 217);
 }
 
 main h2 {
@@ -121,18 +117,19 @@ main h2 span {
 
 main > p {
   font-size: 0.98rem;
-  color: #555555;
+  color: #ffffff;
   margin-bottom: 20px;
 }
 
-/* Form */
+
 form#myForm {
   display: flex;
   flex-direction: column;
   gap: 16px;
+
 }
 
-/* Fieldsets */
+
 fieldset {
   border: none;
   padding: 0;
@@ -142,14 +139,14 @@ fieldset {
   gap: 6px;
 }
 
-/* Labels */
+
 label {
   font-size: 0.97rem;
   font-weight: 500;
-  color: #222222;
+  color: #ffffff;
 }
 
-/* Inputs / selects / textareas */
+
 input[type="text"],
 select,
 textarea {
@@ -159,7 +156,7 @@ textarea {
   padding: 10px 12px;
   border-radius: 8px;
   border: 1px solid rgba(0, 0, 0, 0.15);
-  background-color: #f7f7fa;
+  background-color: #ffffff;
   color: #111111;
   outline: none;
   transition: border-color 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
@@ -178,31 +175,29 @@ textarea:focus {
   box-shadow: 0 0 0 2px rgba(3, 2, 19, 0.12);
 }
 
-/* Make selects look nice */
+
 select {
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
-  background-image: linear-gradient(45deg, transparent 50%, #555 50%), 
-                    linear-gradient(135deg, #555 50%, transparent 50%);
   background-position: calc(100% - 16px) 55%, calc(100% - 10px) 55%;
   background-size: 6px 6px, 6px 6px;
   background-repeat: no-repeat;
 }
 
-/* Textarea */
+
 textarea {
   resize: vertical;
   min-height: 80px;
 }
 
-/* Validation helper text */
+
 .validation {
   font-size: 0.8rem;
   color: #d4183d;
 }
 
-/* Buttons row */
+
 button {
   font-family: inherit;
   font-size: 0.95rem;
@@ -211,23 +206,20 @@ button {
   border-radius: 999px;
   border: none;
   cursor: pointer;
-  transition: background-color 0.15s ease, transform 0.1s ease, box-shadow 0.15s ease;
 }
 
 button.save {
-  background-color: #030213;
+  background-color: #0d00ff;
   color: #ffffff;
-  box-shadow: 0 10px 24px rgba(3, 2, 19, 0.22);
 }
 
 button.save:hover {
-  background-color: #14132b;
+  background-color: #0000ff;
   transform: translateY(-1px);
 }
 
 button.save:active {
   transform: translateY(0);
-  box-shadow: 0 5px 14px rgba(3, 2, 19, 0.25);
 }
 
 button.reset {
@@ -240,19 +232,15 @@ button.reset:hover {
   background-color: #e0e0e6;
 }
 
-/* Put Save + Reset on one line */
-fieldset:last-of-type {
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-}
 
-/* Learning prompts section */
+
+
 section h3 {
   max-width: 900px;
   margin: 0 auto 8px auto;
   font-size: 1.2rem;
   font-weight: 600;
+  color: #ffffff;
 }
 
 section p {
@@ -262,7 +250,7 @@ section p {
   color: #444444;
 }
 
-/* Inline code */
+
 code {
   font-family: "SF Mono", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   background-color: #ececf0;
@@ -271,7 +259,7 @@ code {
   font-size: 0.85rem;
 }
 
-/* Footer */
+
 footer {
   max-width: 900px;
   margin: 32px auto 0 auto;
@@ -281,36 +269,30 @@ footer {
   padding-top: 12px;
 }
 
-/* ====== PROFILES LIST CONTAINER ====== */
+
 
 #content {
   max-width: 1100px;
   margin: 24px auto 32px auto;
   padding: 24px;
   border-radius: 24px;
-  border: 3px solid #000000;
-  background-color: #f9fafb;
+  border: 3px solid #0022ff;
+  background-color: #7192df;
 
   display: flex;
-  flex-wrap: wrap;     /* cards go next to each other and wrap on small screens */
+  flex-wrap: wrap;    
   gap: 20px;
   align-items: flex-start;
 }
 
-/* Stack cards vertically on very small screens */
-@media (max-width: 700px) {
-  #content {
-    flex-direction: column;
-  }
-}
 
-/* ====== SINGLE PROFILE CARD ====== */
+
 
 .profile {
-  flex: 0 0 280px;           /* card width */
-  background-color: #f1f3f6; /* light grey card */
+  flex: 0 0 280px;        
+  background-color: #fbfff3; 
   border-radius: 16px;
-  border: 1px solid #d1d5db;
+  border: 5px solid #0066ff;
   padding: 16px 14px 14px 14px;
 
   display: flex;
@@ -318,28 +300,39 @@ footer {
   gap: 8px;
 }
 
-/* Title “Profile info” */
+.profile h3 {
+  color: #041236;
+}
 .profile h4 {
   font-size: 0.95rem;
   font-weight: 600;
   margin: 0 0 4px 0;
+  color: #004cff;
 }
 
-/* Each info block (Name, Program, Skills, Contact…) */
+
 .profile p {
   margin: 0;
   padding: 8px 10px;
   border-radius: 8px;
-  background-color: #dde1e6;  /* slightly darker grey */
+  background-color: #cfe5f9;  
   font-size: 0.9rem;
+  width: 17vw;
 }
 
-/* Labels like "Name:", "Program:" */
+
 .profile p strong {
   font-weight: 700;
 }
 
-/* Buttons inside each profile card */
+.h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  align-items: center;
+  margin-left: 30vw;
+}
+
+
 .profile button {
   font-family: inherit;
   font-size: 0.85rem;
@@ -354,24 +347,34 @@ footer {
               box-shadow 0.15s ease;
 }
 
-/* Blue Edit button */
+
 .profile .edit {
   background-color: #007aff;
   color: #ffffff;
   box-shadow: 0 8px 18px rgba(0, 122, 255, 0.3);
+  width: 4vw;
 }
 
-.profile .edit:hover {
-  background-color: #0062c8;
-}
 
-/* Red Delete button */
+
+
 .profile .delete {
   background-color: #ff3b30;
   color: #ffffff;
   box-shadow: 0 8px 18px rgba(255, 59, 48, 0.3);
 }
 
-.profile .delete:hover {
-  background-color: #e02a22;
+
+
+.edit-btn {
+  background-color: #007aff;
+  color: #ffffff;
+  box-shadow: 0 8px 18px rgba(0, 122, 255, 0.3);
 }
+
+.delete-btn {
+  background-color: #ff3b30;
+  color: #ffffff;
+  box-shadow: 0 8px 18px rgba(255, 59, 48, 0.3);
+}
+

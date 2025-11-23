@@ -35,37 +35,8 @@
 
 <body>
   <header>
-    <h1>Collecting Data</h1>
-    <h4>POST content to an API Endpoint from an HTML Form to be stored in a Database.</h4>
-
-    <div class="intro">
-      <p>Previously we published data from a database by <a
-          href="https://github.com/ixd-system-design/API-Endpoints-for-Publishing-and-Searching"
-        >creating our own API</a>. Now, let's build functionality to allow users to submit and store data. We will add
-        two core elements:</p>
-      <ul>
-        <li>A <a
-            target="_blank"
-            href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/POST"
-          >POST</a> endpoint on the backend.</li>
-        <li>An <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/form">HTML Form</a> on the
-          front-end.</li>
-      </ul>
-      <p> Form submissions are sent as JSON data in the body of a <a
-          target="_blank"
-          href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/POST"
-        >POST</a> request to an API endpoint, and saved to <a
-          href="https://www.mongodb.com/products/platform/atlas-database"
-        >MongoDB Atlas</a>.
-        API Endpoints are defined by <a href="https://expressjs.com">Express</a>, using <a
-          href="https://www.prisma.io/orm"
-        >Prisma</a> to communicate with the database.
-      </p>
-      <p>When successful, we will log the submission to the console, and also refresh the data list below. NOTE: this
-        demo implements the 'C' and 'R' of 'CRUD' (Create and Read) . We will deal with the 'U' and 'D' (Update and
-        Delete) elsewhere.</p>
-      </p>
-    </div>
+    <h1>HEY PORTFOLIO</h1>
+    <h4>Space where creative Sheridan Students help one another succeed and grow as a creative community</h4>
   </header>
 
   <section id="status">
@@ -73,13 +44,13 @@
     <p id="notReadyStatus">❌ MongoDB is not connected. Please check your connection string in <code>.env</code> file.
     </p>
   </section>
+   <h2>FIND PEOPLE</h2>
 
   <section id="content">
   </section>
-
+  <h3><span>CREATE YOUR POST</span></h3>
   <main>
-    <h2>🐈 <span>Submit Your Family Recipe</span></h2>
-    <p>Share your grandma's secret recipe with the community</p>
+     <p>Share your profile with the community and connect with others</p>
     <form id="myForm">
       <fieldset>
         <label for="name">Profile Name</label>
@@ -94,35 +65,6 @@
         <small class="validation">Name is required</small>
       </fieldset>
 
-      <!-- <fieldset>
-        <label for="birthDate">Birth Date</label>
-        <input
-          type="date"
-          name="birthDate"
-          id="birthDate"
-        />
-      </fieldset> -->
-
-      <!-- <fieldset>
-        <label for="primaryColor">Primary Color</label>
-        <input
-          type="color"
-          name="primaryColor"
-          id="primaryColor"
-          value="#5f5854"
-        />
-      </fieldset> -->
-
-      <!-- <fieldset>
-        <label for="secondaryColor">Secondary Color</label>
-        <input
-          type="color"
-          name="secondaryColor"
-          id="secondaryColor"
-          value="#c4c8cf"
-        />
-      </fieldset> -->
-
       <fieldset>
         <label for="program"> Program of study</label>
         <select
@@ -134,20 +76,21 @@
             disabled
             selected
           >Select a Program</option>
-          <optgroup label="Illustrations">
-            <option value="japan">Japan</option>
-            <option value="china">China</option>
-          </optgroup>
-          <optgroup label="America">
-            <option value="Tiger">Tiger</option>
-            <option value="Lion">Lion</option>
-          </optgroup>
-          <optgroup label="Africa">
+
+            <option value="Animation">Animation</option>
+            <option value="Game Design">Game Design </option>
+            <option value="Interior Design">Interior Design</option>
+            <option value="Illustration">Illustration</option>
+            <option value="Graphic Design">Graphic Design</option>
+            <option value="Interior Design">Interior Design</option>
+            <option value="VCA">VCA</option>
+            <option value="Art Fundamentals">Art Fundamentals</option>
+            <option value="Film">Film</option>
+            <option value="Photography">Photography</option>
+            <option value="Craft and Design">Craft and Design</option>
             <option value="Other">Other</option>
-            <option value="Unknown">Unknown</option>
-          </optgroup>
         </select>
-        <small class="validation">Name is required</small>
+        <small class="validation">Program is required</small>
       </fieldset>
 
 <fieldset>
@@ -161,20 +104,13 @@
             disabled
             selected
           >Select the Year you are in</option>
-          <optgroup label="Bachelor">
-            <option value="second year">Japan</option>
-            <option value="First year bachelor">China</option>
-          </optgroup>
-          <optgroup label="Diploma">
-            <option value="Tiger">Tiger</option>
-            <option value="Lion">Lion</option>
-          </optgroup>
-          <optgroup label="Africa">
-            <option value="Other">Other</option>
-            <option value="Unknown">Unknown</option>
-          </optgroup>
+            <option value="first year">First year</option>
+            <option value="second year">Second year</option>
+            <option value="third year">Third year</option>
+            <option value="fourth year">Fourth year</option>
+            <option value="other">Other</option>
         </select>
-        <small class="validation">Name is required</small>
+        <small class="validation">Year of study is required</small>
       </fieldset>
 
       <fieldset>
@@ -188,18 +124,11 @@
             disabled
             selected
           >Select your Campus</option>
-            <option value="main">trafalgar</option>
-            <option value="north">HMC</option>
-          <optgroup label="South">
-            <option value="south">South Campus</option>
-            <option value="east">East Campus</option>
-          </optgroup>
-          <optgroup label="West">
-            <option value="west">West Campus</option>
-            <option value="central">Central Campus</option>
-          </optgroup>
+            <option value="trafalgar">trafalgar</option>
+            <option value="hMC">HMC</option>
+            <option value="brampton">Brampton</option>
         </select>
-        <small class="validation">Name is required</small>
+        <small class="validation">Campus is required</small>
       </fieldset>
 
        <fieldset>
@@ -233,9 +162,9 @@
           id="contact"
           rows="4"
           cols="50"
-          placeholder="your disrcord, email, phone, etc."
+          placeholder="your Discord, Email, Phone, etc."
         ></textarea>
-        <small class="validation">Skills are required</small>
+        <small class="validation">Contact are required</small>
       </fieldset>
     
            
@@ -250,19 +179,8 @@
 
   </main>
 
-  
-
-  <section>
-    <h3>Learning Prompts</h3>
-    <p>Can you add a connection string to the NodeJS environment (e.g. .env file) for your own MongoDB Atlas Cluster?
-    </p>
-    <p>Use MongoDB Compass to verify that your data collection form is working. </p>
-    <p>Looking ahead: in the future we will build a full CRUD implementation. Can you envision how we might add features
-      for Updating and deleting individual records?</p>
-  </section>
-
   <footer>
-    Created by <a href="https://nsitu.ca">Harold Sikkema</a> in the context of
+    Created by <a href="https://Monserrat.ca">Monserrat Cardenas</a> in the context of
     Systems Design in the Interaction Design program at Sheridan College.
   </footer>
 
