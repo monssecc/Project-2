@@ -85,7 +85,7 @@ header h4 {
 
 
 .profile {
-  background-color: #0043DF;
+  background-color: #d6e2ff;
   border-radius: 10px;
   border: 1px solid rgba(25, 0, 255, 0.05);
   font-size: 0.95rem;
@@ -96,10 +96,9 @@ header h4 {
 main {
   max-width: 900px;
   margin: 0 auto 32px auto;
-  background-color: #4e8cff;
+  background-color: #dbe7ff;
   border-radius: 12px;
   padding: 24px 24px 28px 24px;
-  border: 5px solid rgb(2, 20, 217);
 }
 
 main h2 {
@@ -143,7 +142,7 @@ fieldset {
 label {
   font-size: 0.97rem;
   font-weight: 500;
-  color: #ffffff;
+  color: #242424;
 }
 
 
@@ -194,7 +193,7 @@ textarea {
 
 .validation {
   font-size: 0.8rem;
-  color: #d4183d;
+  color: #aa848c;
 }
 
 
@@ -223,8 +222,8 @@ button.save:active {
 }
 
 button.reset {
-  background-color: #ececf0;
-  color: #333333;
+  background-color: #6d6d6d;
+  color: #ffffff;
   margin-left: 8px;
 }
 
@@ -292,7 +291,7 @@ footer {
   flex: 0 0 280px;        
   background-color: #fbfff3; 
   border-radius: 16px;
-  border: 5px solid #0066ff;
+  border: 5px solid #a3c8ff;
   padding: 16px 14px 14px 14px;
 
   display: flex;
@@ -307,7 +306,7 @@ footer {
   font-size: 0.95rem;
   font-weight: 600;
   margin: 0 0 4px 0;
-  color: #004cff;
+  color: #e9f0ff;
 }
 
 
@@ -349,9 +348,8 @@ footer {
 
 
 .profile .edit {
-  background-color: #007aff;
+  background-color: #cccccc;
   color: #ffffff;
-  box-shadow: 0 8px 18px rgba(0, 122, 255, 0.3);
   width: 4vw;
 }
 
@@ -369,7 +367,6 @@ footer {
 .edit-btn {
   background-color: #007aff;
   color: #ffffff;
-  box-shadow: 0 8px 18px rgba(0, 122, 255, 0.3);
 }
 
 .delete-btn {
@@ -378,3 +375,8 @@ footer {
   box-shadow: 0 8px 18px rgba(255, 59, 48, 0.3);
 }
 
+#intro {
+  font-size: 1rem;
+  color: #232323;
+  margin-bottom: 12px;
+}
